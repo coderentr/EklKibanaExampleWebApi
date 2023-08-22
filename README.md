@@ -158,37 +158,35 @@ docker-compose up
 
 komutu ile servislerimizi docker'da ayağa kaldırıyoruz.
 
-![image](https://github.com/coderentr/EklKibanaExampleWebApi/assets/33000530/7b292878-faae-4722-91b9-321753566f53)
+<img width="777" alt="Screenshot 2023-08-22 at 23 43 10" src="https://github.com/coderentr/EklKibanaExampleWebApi/assets/33000530/5d37b4f4-b7ae-41f2-bc2b-e9a50f4e6f02">
 
 
 ElasticSearch:
-![image](https://github.com/coderentr/EklKibanaExampleWebApi/assets/33000530/43ed8789-c439-4f9d-b44d-7cc12469544a)
 
+<img width="475" alt="Screenshot 2023-08-22 at 23 44 23" src="https://github.com/coderentr/EklKibanaExampleWebApi/assets/33000530/bf5edb29-2d69-4b03-a7b1-c471bf17af52">
 
 Kibana:
 
-![image](https://github.com/coderentr/EklKibanaExampleWebApi/assets/33000530/2aa424a4-02d5-4267-84c1-84708d3b8878)
-
+<img width="829" alt="Screenshot 2023-08-22 at 23 45 25" src="https://github.com/coderentr/EklKibanaExampleWebApi/assets/33000530/8639d937-b9c7-4669-be36-40cf8982202d">
 
 WebApi:
 
-![image](https://github.com/coderentr/EklKibanaExampleWebApi/assets/33000530/6880e889-01f7-4140-8935-0ae766d1d425)
-
+<img width="859" alt="Screenshot 2023-08-22 at 23 47 05" src="https://github.com/coderentr/EklKibanaExampleWebApi/assets/33000530/859e92c4-8003-4632-8921-a24d9758f7ab">
 
 Kibana'da index'imizi ekleyelim; 
-![image](https://github.com/coderentr/EklKibanaExampleWebApi/assets/33000530/56df4c9b-bfe8-447f-a753-537cb0e69ac4)
+
+<img width="701" alt="Screenshot 2023-08-22 at 23 48 16" src="https://github.com/coderentr/EklKibanaExampleWebApi/assets/33000530/4d82a07d-b6d5-46ad-af58-e345531f7004">
 
 
-![image](https://github.com/coderentr/EklKibanaExampleWebApi/assets/33000530/30bb9bbf-2b70-44f1-84c1-671d761f2618)
+<img width="830" alt="Screenshot 2023-08-22 at 23 49 11" src="https://github.com/coderentr/EklKibanaExampleWebApi/assets/33000530/e3276495-5dc1-4da5-b5c0-6116c851296a">
 
 
-![image](https://github.com/coderentr/EklKibanaExampleWebApi/assets/33000530/1da7d465-4485-4f44-bc34-c057357d12c1)
+<img width="1000" alt="Screenshot 2023-08-22 at 23 49 49" src="https://github.com/coderentr/EklKibanaExampleWebApi/assets/33000530/147018f7-c697-446a-a3c8-4ef15e88d146">
 
-
-![image](https://github.com/coderentr/EklKibanaExampleWebApi/assets/33000530/8e3a2710-e707-45e6-9a03-757444dc7b15)
+<img width="994" alt="Screenshot 2023-08-22 at 23 50 27" src="https://github.com/coderentr/EklKibanaExampleWebApi/assets/33000530/7dc5aceb-fd42-47aa-b404-59a53d8b248a">
 
 İndex'imizi oluşturduktan sonra ilgili loglarımızı görüntüleyebiliyoruz. 
 
-![image](https://github.com/coderentr/EklKibanaExampleWebApi/assets/33000530/a8cd517a-393b-403e-aaab-5caaae164c50)
+<img width="1017" alt="Screenshot 2023-08-22 at 23 51 02" src="https://github.com/coderentr/EklKibanaExampleWebApi/assets/33000530/87b452b6-6c3c-4f17-949f-aff9be6d9895">
 
 

@@ -1,23 +1,21 @@
 
+using System.Reflection;
 using Serilog;
+using Serilog.Exceptions;
 using Serilog.Sinks.Elasticsearch;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSwaggerGen();
-
-Log.Logger = new LoggerConfiguration()
-    .ReadFrom.Configuration(builder.Configuration)
-    .WriteTo.Console()
-    .WriteTo.Elasticsearch(ConfigureElasticSink(builder.Configuration))
-    .CreateLogger();
-
-builder.Host.UseSerilog();
-
+// Add services to the container.
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+configureLogging();
+
+builder.Host.UseSerilog();
 
 var app = builder.Build();
 
@@ -36,16 +34,34 @@ app.MapControllers();
 
 app.Run();
 
-ElasticsearchSinkOptions ConfigureElasticSink(IConfiguration configuration)
-{
-    var elasticUri = configuration["ElasticConfiguration:Uri"];
-    var indexFormat = "test-{0:yyyy.MM.dd}";
+void configureLogging(){
+    var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
-    return new ElasticsearchSinkOptions(new Uri(elasticUri))
+    var configuration = new ConfigurationBuilder()
+       .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+       .AddJsonFile(
+        $"appsettings.{environment}.json", optional: true)
+       .Build();
+
+    Log.Logger = new LoggerConfiguration()
+        .Enrich.FromLogContext()
+        .Enrich.WithExceptionDetails()
+        .WriteTo.Debug()
+        .WriteTo.Console()
+        .WriteTo.Elasticsearch(ConfigureElasticSink(configuration, environment ?? string.Empty))
+        .Enrich.WithProperty("Environment", environment??string.Empty)
+        .ReadFrom.Configuration(configuration)
+        .CreateLogger();
+}
+
+ElasticsearchSinkOptions ConfigureElasticSink(IConfigurationRoot configuration, string environment)
+{
+    return new ElasticsearchSinkOptions(new Uri(configuration["ElasticConfiguration:Uri"]))
     {
-        AutoRegisterTemplate = true,
-        IndexFormat = indexFormat,
+        AutoRegisterTemplate =true,
+        IndexFormat=$"{Assembly.GetExecutingAssembly().GetName()?.Name?.ToString().ToLower().Replace(".","-")}-{environment.ToLower()}-{DateTime.UtcNow:yyyy-MM}",
         NumberOfReplicas = 1,
         NumberOfShards = 2
     };
+
 }

@@ -1,4 +1,4 @@
-# EklKibanaExampleWebApi
+# EklKibanaExampleWebApi      ([ForEnglish](https://github.com/coderentr/EklKibanaExampleWebApi/blob/main/README_EN.md))
 
 Bu projede Serilog ile elasticsearch'e log atmak ve kibana ile gösterimini yapmak üzerine bir geliştirme yapılmıştır. 
 

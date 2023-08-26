@@ -27,7 +27,7 @@ services:
       - elasticsearch
 
   EklKibanaExampleWebApi:
-    container_name: EklKibanaExampleWebApi
+    container_name: ElkKibanaExampleWebApi
     build:
       context: .
       dockerfile: Dockerfile   

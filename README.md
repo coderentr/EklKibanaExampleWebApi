@@ -136,7 +136,7 @@ services:
       - elasticsearch
 
   EklKibanaExampleWebApi:
-    container_name: EklKibanaExampleWebApi
+    container_name: ElkKibanaExampleWebApi
     build:
       context: .
       dockerfile: Dockerfile   
@@ -148,6 +148,7 @@ services:
     ports:
       - "6060:80"
       - "6061:443"
+    
     
 
 ```

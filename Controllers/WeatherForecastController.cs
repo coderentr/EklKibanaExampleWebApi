@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace EklKibanaExampleWebApi.Controllers;
+namespace ElkKibanaExampleWebApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]

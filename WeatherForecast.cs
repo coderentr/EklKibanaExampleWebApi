@@ -1,4 +1,4 @@
-namespace EklKibanaExampleWebApi;
+namespace ElkKibanaExampleWebApi;
 
 public class WeatherForecast
 {
